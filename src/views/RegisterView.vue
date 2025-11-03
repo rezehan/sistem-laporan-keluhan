@@ -78,12 +78,9 @@
 </template>
 
 <script>
-import { auth, db } from '../firebase/firebase'
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
-import { setDoc, doc } from "firebase/firestore";
 import { RouterLink } from 'vue-router';
-import { mapWritableState } from 'pinia';
 import useUserStores from '../stores/user';
+import { mapActions } from 'pinia';
 
 export default {
     name: 'Register',
@@ -102,58 +99,33 @@ export default {
             reg_alert_message: 'Please wait! Your account is being created'
         }
     },
-    computed: {
-        ...mapWritableState(useUserStores, ['userLoggedIn'])
-    },
     methods: {
+        ...mapActions(useUserStores, {
+            createUser: "register"
+        }),
         async register(values) {
             this.reg_show_alert = true
             this.reg_in_submission = true
             this.reg_alert_variant = 'bg-blue-500'
             this.reg_alert_message = 'Please wait! Your account is being created'
 
-            let userCred = null;
             try {
-                userCred = await createUserWithEmailAndPassword(
-                    auth,
-                    values.email,
-                    values.password
-                )
-
-                await updateProfile(userCred.user, {
-                    displayName: values.name,
-                });
+                await this.createUser(values)
 
                 // SUKSES
                 this.reg_alert_variant = 'bg-green-500'
                 this.reg_alert_message = 'Success! Your account has been created😊'
-
-                const user = userCred.user
-                const userDocRef = doc(db, 'users', user.uid)
-
-                await setDoc(userDocRef, {
-                    uid: user.uid,
-                    email: user.email,
-                    number: values.nomor,
-                    displayName: values.name,
-                    role: 'user',
-                    createdAt: new Date()
-                });
-
             } catch (error) {
                 this.reg_alert_variant = 'bg-red-600'
 
                 if (error.code === 'auth/email-already-in-use') {
-                    this.reg_alert_message = 'Gagal! Email ini sudah terdaftar.';
+                    this.reg_alert_message = 'Gagal! Email ini sudah terdaftar.😭';
                 } else {
-                    this.reg_alert_message = `Terjadi kesalahan: ${error.message}`;
+                    this.reg_alert_message = `Terjadi kesalahan: ${error.message}👿`;
                 }
                 return
             }
             this.reg_in_submission = false
-            this.userLoggedIn = true
-            console.log(userCred)
-            console.log(this.userLoggedIn)
         }
     }
 }

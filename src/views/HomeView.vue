@@ -13,9 +13,9 @@
                 </p>
             </article>
             <div>
-                <a href="#"
+                <router-link to="/manage" href="#"
                     class="py-4 px-8 bg-indigo-600 text-white text-center rounded-xl hover:bg-indigo-700">Sampaikan
-                    Pengaduan</a>
+                    Pengaduan</router-link>
             </div>
         </div>
         <!-- end landing page -->
@@ -200,6 +200,7 @@
 
 <script>
 import Header from '../components/Header.vue'
+import { RouterLink } from 'vue-router';
 
 export default {
     components: {
