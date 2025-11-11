@@ -108,7 +108,7 @@
                                             </svg>
                                         </div>
                                         <span class="text-xs font-semibold text-gray-700">{{ report.rating.rating
-                                            }}/5</span>
+                                        }}/5</span>
                                         <button v-if="report.rating.comment" @click="showRatingDetail(report)"
                                             class="text-xs text-blue-600 hover:text-blue-800 underline">
                                             Lihat Detail
@@ -242,6 +242,15 @@ import { useUserStore } from '../stores/user';
 import { mapStores, mapState, mapActions } from 'pinia';
 
 export default {
+    beforeRouteEnter: (to, from, next) => {
+        const store = useUserStore()
+        if (store.userLoggedIn && store.userRole === 'admin') {
+            next()
+        } else {
+            next({ name: 'home' })
+        }
+    },
+
     async created() {
         await this.fetchAllReports();
     },
