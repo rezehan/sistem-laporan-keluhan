@@ -15,7 +15,6 @@ import {
     getDoc,
     serverTimestamp
 } from "firebase/firestore";
-import { useUserStore } from './user';
 
 export const useReportStore = defineStore('reportStorage', {
     state: () => ({

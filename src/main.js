@@ -5,18 +5,20 @@ import router from './router/routes';
 import './style.css';
 import { auth } from './firebase/firebase';
 import App from './App.vue';
-import { useUserStore } from './stores/user'; // <<< Import Pinia Store
+import { useUserStore } from './stores/user';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 let app;
 
-// Setup Pinia sebelum digunakan
 const pinia = createPinia();
+const aos = AOS.init()
 
-// Fungsi untuk menyiapkan dan me-mount aplikasi
 async function mountApp() {
     
     // 1. Inisialisasi Pinia
     app.use(pinia);
+    app.use(aos)
     
     // 2. Dapatkan instance store dan panggil init()
     const userStore = useUserStore();
@@ -31,10 +33,6 @@ async function mountApp() {
     // 4. Mount Aplikasi
     app.mount('#app');
 }
-
-// ----------------------------------------------------
-// Menggantikan pola onAuthStateChanged lama dengan pola Pinia init()
-// ----------------------------------------------------
 
 // Cek status otentikasi awal sebelum mount
 auth.onAuthStateChanged(async () => {

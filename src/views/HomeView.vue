@@ -4,7 +4,7 @@
         <!-- Landing Page -->
         <div id="beranda"
             class="container mx-auto min-h-screen px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-6 sm:gap-8 py-12">
-            <article class="mb-4">
+            <article class="mb-4" data-aos="fade-down">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 px-4">
                     Layanan Pengaduan Jalanan <span class="block mt-2 sm:mt-3">Rusak Masyarakat</span>
                 </h2>
@@ -13,7 +13,7 @@
                     Ditindaklanjuti
                 </p>
             </article>
-            <div>
+            <div data-aos="fade-up">
                 <router-link :to="{ name: 'manage' }" href="#"
                     class="py-3 sm:py-4 px-6 sm:px-8 bg-indigo-600 text-white text-center text-sm sm:text-base rounded-xl hover:bg-indigo-700 inline-block">
                     Sampaikan Pengaduan
@@ -25,7 +25,7 @@
         <!-- tentang layanan -->
         <div id="aboutMe"
             class="container mx-auto px-4 sm:px-6 lg:px-8 bg-slate-50 py-8 sm:py-12 lg:py-16 flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-7 rounded-xl my-8">
-            <article class="w-full lg:w-2/5 px-4">
+            <article class="w-full lg:w-2/5 px-4" data-aos="fade-right">
                 <h3 class="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Apa itu Layanan Pengaduan?</h3>
                 <p class="text-sm sm:text-base text-slate-600 text-center lg:text-left">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nam eligendi aperiam
@@ -34,21 +34,22 @@
                     temporibus nulla ipsa! Explicabo provident eaque sapiente?
                 </p>
             </article>
-            <img src="../assets/undraw_news_nz1p.svg" class="w-full max-w-sm lg:max-w-md" alt="">
+            <img data-aos="fade-left" src="../assets/undraw_news_nz1p.svg" class="w-full max-w-sm lg:max-w-md" alt="">
         </div>
         <!-- end tentang layanan -->
 
         <!-- data pengaduan -->
         <div class="py-4 sm:py-12">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8 sm:mb-12">
+                <div class="text-center mb-8 sm:mb-12" data-aos="fade-down">
                     <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
                         Data Pengaduan
                     </h1>
                     <p class="text-gray-600">Statistik laporan pengaduan terkini</p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row justify-center items-stretch gap-6 max-w-4xl mx-auto">
+                <div class="flex flex-col sm:flex-row justify-center items-stretch gap-6 max-w-4xl mx-auto"
+                    data-aos="fade-up">
                     <div class="flex-1 group">
                         <div
                             class="h-full bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8">
@@ -84,7 +85,7 @@
                                     </svg>
                                 </div>
                                 <p class="text-5xl sm:text-4xl font-bold text-white mb-3">
-
+                                    {{ laporanSelesaiCount }}
                                 </p>
                                 <p class="text-lg text-emerald-100 font-medium uppercase tracking-wide">
                                     Laporan Diselesaikan
@@ -102,7 +103,8 @@
             <h2 class="text-center mb-6 sm:mb-8 text-xl sm:text-2xl font-bold px-4">Prosedur Pengaduan di Website
                 Layanan Pengaduan</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform"
+                    data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-20 h-20 sm:w-32 sm:h-32">
@@ -117,7 +119,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform"
+                    data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-20 h-20 sm:w-32 sm:h-32">
@@ -133,7 +136,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform"
+                    data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-20 h-20 sm:w-32 sm:h-32">
@@ -148,7 +152,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform"
+                    data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-20 h-20 sm:w-32 sm:h-32">
@@ -165,7 +170,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform"
+                    data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-20 h-20 sm:w-32 sm:h-32">
@@ -180,7 +186,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
+                <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform"
+                    data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-20 h-20 sm:w-32 sm:h-32">
@@ -201,7 +208,8 @@
 
         <!-- tautan cepat -->
         <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-12">
-            <div class="w-full bg-indigo-600 rounded-xl py-8 sm:py-12 px-4 flex flex-col justify-center items-center">
+            <div class="w-full bg-indigo-600 rounded-xl py-8 sm:py-12 px-4 flex flex-col justify-center items-center"
+                data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-center text-white mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold">Siap Menyampaikan Keluhan
                     Anda?</h2>
                 <p class="text-center text-white mb-8 sm:mb-12 text-sm sm:text-base max-w-2xl">

@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
     "@vee-validate/rules": "^4.15.1",
+    "aos": "^2.3.4",
     "firebase": "^12.5.0",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.16",

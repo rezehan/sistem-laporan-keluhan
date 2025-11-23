@@ -108,7 +108,7 @@
                                             </svg>
                                         </div>
                                         <span class="text-xs font-semibold text-gray-700">{{ report.rating.rating
-                                        }}/5</span>
+                                            }}/5</span>
                                         <button v-if="report.rating.comment" @click="showRatingDetail(report)"
                                             class="text-xs text-blue-600 hover:text-blue-800 underline">
                                             Lihat Detail
@@ -246,6 +246,7 @@ export default {
         const store = useUserStore()
         if (store.userLoggedIn && store.userRole === 'admin') {
             next()
+            console.log(store.userRole)
         } else {
             next({ name: 'home' })
         }

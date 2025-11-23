@@ -6,7 +6,7 @@
             <div>
                 <router-link :to="{ name: 'home' }"
                     class="text-lg sm:text-xl font-semibold hover:text-indigo-600 transition-colors">
-                    Company
+                    <img src="/PNUP (1).png" width="50px" alt="logo pnup">
                 </router-link>
             </div>
 
