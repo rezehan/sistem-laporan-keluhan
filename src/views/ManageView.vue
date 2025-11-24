@@ -365,6 +365,15 @@ import AppUpload from '../components/Upload.vue';
 
 export default {
     name: 'Manage',
+    beforeRouteEnter: (to, from, next) => {
+        const store = useUserStore()
+        if (store.userLoggedIn) {
+            next()
+            console.log(store.userRole)
+        } else {
+            next({ name: 'home' })
+        }
+    },
     async created() {
         await this.fetchUserReports();
     },

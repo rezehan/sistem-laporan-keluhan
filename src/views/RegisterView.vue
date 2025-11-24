@@ -142,15 +142,6 @@ import { mapActions } from 'pinia';
 
 export default {
     name: 'Register',
-    beforeRouteEnter: (to, from, next) => {
-        const store = useUserStore()
-        if (store.userLoggedIn) {
-            next()
-            console.log(store.userRole)
-        } else {
-            next({ name: 'home' })
-        }
-    },
     data() {
         return {
             schema: {
